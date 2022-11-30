@@ -1,0 +1,29 @@
+.first-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('../img/firstSlideBg.jpg');
+  background-size: cover;
+
+  &__wraper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  &__title {
+    background: rgba(255, 255, 255, 0.63);
+    padding: 20px 70px;
+    font-weight: 400;
+    text-align: center;
+    color: #000000;
+    @include title-font();
+  }
+
+  &__button-wraper {
+    margin-top: 50px;
+  }
+
+}

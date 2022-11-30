@@ -1,0 +1,45 @@
+.description {
+  background: #000000;
+  color: #fff;
+  height: 100%;
+
+  @include display-after(sm) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__innter-border {
+
+    @include display-after(sm) {
+      border: 1px solid #FFFFFF;
+      height: 93%;
+      width: 93%;
+    }
+  }
+
+  &__title {
+    display: none;
+    font-weight: 400;
+    color: #FFFFFF;
+
+    @include title-font();
+
+    @include display-after(sm) {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  &__composition-wraper {
+    padding: 20px;
+
+    @include display-after(sm) {
+      margin-top: 30%;
+    }
+  }
+
+  &__composition-item {
+
+  }
+}

@@ -1,0 +1,15 @@
+.m-button {
+  filter: drop-shadow(7px 7px 9px rgba(0, 0, 0, 0.25));
+  background: #000000;
+  padding: 12px;
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;
+  @include title-font();
+
+  &__innter-border {
+    border: 1px solid #FFFFFF;
+    text-align: center;
+    padding: 5px 50px;
+  }
+}

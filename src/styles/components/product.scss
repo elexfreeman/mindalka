@@ -1,0 +1,35 @@
+.product {
+  height: 50vh;
+  width: 100%;
+  background-image: url('../img/product.jpg');
+  background-size: cover;
+
+  @include display-after(sm) {
+    height: 100%;
+  }
+
+  &__title-right {
+    flex-direction: row-reverse;
+  }
+
+  &__title {
+    width: 40%;
+    background: rgba(255, 255, 255, 0.44);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    @include title-font();
+  }
+
+  &__title-wraper {
+    height: 100%;
+    color: #000;
+    display: flex;
+    align-items: center;
+
+    @include display-after(sm) {
+      display: none;
+    }
+  }
+}

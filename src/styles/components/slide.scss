@@ -1,0 +1,39 @@
+.slide {
+
+  &__wraper-two-side {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    @include display-after(sm) {
+      flex-direction: row;
+      min-height: 100vh;
+    }
+  }
+
+  &__composition-left {
+    flex-direction: column-reverse;
+
+    .product__title {
+      flex-direction: row-reverse;
+    }
+    @include display-after(sm) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__composition {
+    flex-direction: column-reverse;
+    @include display-after(sm) {
+      flex-direction: row;
+    }
+  }
+
+  &__wraper-two-side-item {
+    width: 100%;
+
+    @include display-after(sm) {
+      width: 50%;
+    }
+  }
+}

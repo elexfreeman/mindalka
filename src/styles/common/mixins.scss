@@ -1,0 +1,54 @@
+// After changing, update also in globalSettings
+// Actual breakpoints (mobile first)
+$--screen-sm: 1020px;
+$--screen-md: 1440px;
+$--screen-lg: 1660px;
+// Grid breakpoints (sm, md, lg)
+$breakpoints: ($--screen-sm, $--screen-md, $--screen-lg);
+
+// Grid configuration
+$grid-columns: 12; // Set number of columns in the grid
+
+$gutter: 15px; // Set gutter size
+$gutters: (15px, 20px, 30px, 30px); // Set gutters size (xs, sm, md, lg)
+
+$content-max-width: (
+  712px,
+  1194px,
+  1350px,
+  1660px
+); // Set the max-width of the row well
+
+$breakpoint-up-prefixes: ('xs', 'sm', 'md', 'lg');
+
+
+@mixin display-after($screen) {
+  @if $screen == xs {
+    // "xs" this is mobile - default (mobile first)
+    @content;
+  } @else if $screen == sm {
+    // tablet
+    @media screen and (min-width: $--screen-sm) {
+      @content;
+    }
+  } @else if $screen == md {
+    // desktop
+    @media screen and (min-width: $--screen-md) {
+      @content;
+    }
+  } @else if $screen == lg {
+    // large
+    @media screen and (min-width: $--screen-lg) {
+      @content;
+    }
+  }
+}
+
+@mixin title-font() {
+  font-size: 20px;
+  line-height: 26px;
+  @include display-after(sm) {
+    font-size: 64px;
+    line-height: 101px;
+  }
+}

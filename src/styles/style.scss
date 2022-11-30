@@ -1,0 +1,36 @@
+// Temporary place to save fons variables
+$--font-family-sans-serif: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$--font-family-site: 'Golos Text', 'Golos', $--font-family-sans-serif;
+
+@import "./common/mixins.scss";
+@import "./components/slide.scss";
+@import "./components/button.scss";
+@import "./components/description.scss";
+@import "./components/product.scss";
+
+
+@import "./firstSlide.scss";
+
+body {
+  font-family: $--font-family-site;
+  margin: 0;
+}
+
+.lemd-container {
+  width: 100%;
+  margin: 0 auto;
+
+  @include display-after(sm) {
+    max-width: 770px; 
+  }
+
+  @include display-after(md) {
+    max-width: 1080px; 
+  }
+
+  @include display-after(lg) {
+    max-width: 1194px
+  }
+
+}
+
