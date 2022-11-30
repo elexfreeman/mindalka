@@ -1,6 +1,4 @@
-// Temporary place to save fons variables
-$--font-family-sans-serif: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-$--font-family-site: 'Golos Text', 'Golos', $--font-family-sans-serif;
+$--font-family-site: 'Marck Script';
 
 @import "./common/mixins.scss";
 @import "./components/slide.scss";
@@ -13,6 +11,7 @@ $--font-family-site: 'Golos Text', 'Golos', $--font-family-sans-serif;
 
 body {
   font-family: $--font-family-site;
+
   margin: 0;
 }
 

@@ -17,6 +17,15 @@
     .product__title {
       flex-direction: row-reverse;
     }
+
+    .product__title-wraper {
+      flex-direction: row-reverse;
+    }
+
+    .description__innter-border {
+      flex-direction: row-reverse;
+    }
+
     @include display-after(sm) {
       flex-direction: row-reverse;
     }

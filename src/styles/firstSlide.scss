@@ -19,7 +19,13 @@
     font-weight: 400;
     text-align: center;
     color: #000000;
-    @include title-font();
+      font-size: 45px;
+      line-height: 26px;
+
+    @include display-after(sm) {
+    font-size: 64px;
+    line-height: 101px;
+    }
   }
 
   &__button-wraper {

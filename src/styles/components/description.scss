@@ -11,7 +11,9 @@
 
   &__innter-border {
 
+    display: flex;
     @include display-after(sm) {
+      display: block;
       border: 1px solid #FFFFFF;
       height: 93%;
       width: 93%;
@@ -36,10 +38,12 @@
 
     @include display-after(sm) {
       margin-top: 30%;
+      width: inherit;
+      background: inherit;
     }
   }
 
   &__composition-item {
-
+    padding: 5px 20px;
   }
 }
