@@ -12,16 +12,29 @@ const firstSlide = readFileSync(resolve(_dirname, demoPath, '_firstSlide.html'))
 const leftSlide = readFileSync(resolve(_dirname, demoPath, '_leftSlide.html'));
 const rightSlide = readFileSync(resolve(_dirname, demoPath, '_rightSlide.html'));
 
+
 export default defineConfig({
   build: {
-    lib: {
-      entry: resolve(_dirname, 'src/index.js'),
-      name: 'md-components',
-      formats: ['es'],
-      fileName: () => `index.js`,
-    },
+    outDir: 'build',
+    assetsDir: 'dist',
+    publicDir: 'public',
+    minify: false,
     rollupOptions: {
-      external: ['marked'],
+      plugins: [],
+      external: {},
+      output: {
+        globals: {},
+        sourcemap: true,
+        sourcemapExcludeSources: true,
+
+        /**
+         * Chunks should not contain dots in filenames to make easy filter logic on production balancer
+         */
+        chunkFileNames: 'dist/[name]-[hash].js',
+        entryFileNames: 'dist/[name]-[hash].js',
+        assetFileNames: 'dist/[name]-[hash].[ext]',
+        // manualChunks,
+      },
     },
   },
   plugins: [

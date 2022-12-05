@@ -1,0 +1,223 @@
+.slide__wraper-two-side {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media screen and (min-width: 1020px) {
+  .slide__wraper-two-side {
+    flex-direction: row;
+    min-height: 100vh;
+  }
+}
+.slide__composition-left {
+  flex-direction: column-reverse;
+}
+.slide__composition-left .product__title {
+  flex-direction: row-reverse;
+}
+.slide__composition-left .product__title-wraper {
+  flex-direction: row-reverse;
+}
+.slide__composition-left .description__innter-border {
+  flex-direction: row-reverse;
+}
+@media screen and (min-width: 1020px) {
+  .slide__composition-left {
+    flex-direction: row-reverse;
+  }
+}
+.slide__composition {
+  flex-direction: column-reverse;
+}
+@media screen and (min-width: 1020px) {
+  .slide__composition {
+    flex-direction: row;
+  }
+}
+.slide__wraper-two-side-item {
+  width: 100%;
+}
+@media screen and (min-width: 1020px) {
+  .slide__wraper-two-side-item {
+    width: 50%;
+  }
+}
+.m-button {
+  filter: drop-shadow(7px 7px 9px rgba(0, 0, 0, 0.25));
+  background: #000000;
+  padding: 12px;
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 26px;
+}
+@media screen and (min-width: 1020px) {
+  .m-button {
+    font-size: 64px;
+    line-height: 101px;
+  }
+}
+@media screen and (min-width: 1020px) {
+  .m-button {
+    font-size: 24px;
+    line-height: 42px;
+  }
+}
+.m-button__innter-border {
+  border: 1px solid #FFFFFF;
+  text-align: center;
+  padding: 5px 50px;
+}
+.description {
+  background: #000000;
+  color: #fff;
+  height: 100%;
+}
+@media screen and (min-width: 1020px) {
+  .description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.description__innter-border {
+  display: flex;
+}
+@media screen and (min-width: 1020px) {
+  .description__innter-border {
+    display: block;
+    border: 1px solid #FFFFFF;
+    height: 93%;
+    width: 93%;
+  }
+}
+.description__title {
+  display: none;
+  font-weight: 400;
+  color: #FFFFFF;
+  font-size: 20px;
+  line-height: 26px;
+}
+@media screen and (min-width: 1020px) {
+  .description__title {
+    font-size: 64px;
+    line-height: 101px;
+  }
+}
+@media screen and (min-width: 1020px) {
+  .description__title {
+    display: block;
+    text-align: center;
+  }
+}
+.description__composition-wraper {
+  padding: 20px;
+}
+@media screen and (min-width: 1020px) {
+  .description__composition-wraper {
+    margin-top: 30%;
+    width: inherit;
+    background: inherit;
+  }
+}
+.description__composition-item {
+  padding: 5px 20px;
+}
+.product {
+  height: 50vh;
+  width: 100%;
+  background-image: url("/dist/product-fc9e4251.jpg");
+  background-size: cover;
+}
+@media screen and (min-width: 1020px) {
+  .product {
+    height: 100%;
+  }
+}
+.product__title-right {
+  flex-direction: row-reverse;
+}
+.product__title {
+  width: 40%;
+  background: rgba(255, 255, 255, 0.44);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  padding: 0 20px;
+  font-size: 20px;
+  line-height: 26px;
+}
+@media screen and (min-width: 1020px) {
+  .product__title {
+    font-size: 64px;
+    line-height: 101px;
+  }
+}
+.product__title-wraper {
+  height: 100%;
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+@media screen and (min-width: 1020px) {
+  .product__title-wraper {
+    display: none;
+  }
+}
+.first-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("/dist/firstSlideBg-89a0ae18.jpg");
+  background-size: cover;
+}
+.first-slide__wraper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.first-slide__title {
+  background: rgba(255, 255, 255, 0.63);
+  padding: 20px 70px;
+  font-weight: 400;
+  text-align: center;
+  color: #000000;
+  font-size: 65px;
+  line-height: 62px;
+}
+@media screen and (min-width: 1020px) {
+  .first-slide__title {
+    font-size: 64px;
+    line-height: 101px;
+  }
+}
+.first-slide__button-wraper {
+  margin-top: 50px;
+}
+body {
+  font-family: "Marck Script";
+  margin: 0;
+}
+.lemd-container {
+  width: 100%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1020px) {
+  .lemd-container {
+    max-width: 770px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .lemd-container {
+    max-width: 1080px;
+  }
+}
+@media screen and (min-width: 1660px) {
+  .lemd-container {
+    max-width: 1194px;
+  }
+}
