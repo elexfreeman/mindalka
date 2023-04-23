@@ -1,20 +1,25 @@
-import { defineConfig } from 'vite';
-import { createHtmlPlugin } from 'vite-plugin-html';
+import dotenv from 'dotenv';
+import { injectHtml } from 'vite-plugin-html';
 import { resolve, dirname } from 'path';
-import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 
-const demoPath = './src/demo/';
+import { createVuePlugin } from 'vite-plugin-vue2';
 
 const _dirname = dirname(fileURLToPath(import.meta.url));
+dotenv.config();
 
-const firstSlide = readFileSync(resolve(_dirname, demoPath, '_firstSlide.html'));
-const leftSlide = readFileSync(resolve(_dirname, demoPath, '_leftSlide.html'));
-const rightSlide = readFileSync(resolve(_dirname, demoPath, '_rightSlide.html'));
-
-
-export default defineConfig({
+const viteConfig = {
+  base: process.env.DEV_MODE == '1' ? '/' : `/galaxy-simulation/`,
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/styles/style.scss";`,
+        charset: false,
+      },
+    },
+  },
   build: {
+    base: `/`,
     outDir: 'build',
     assetsDir: 'dist',
     publicDir: 'public',
@@ -37,14 +42,26 @@ export default defineConfig({
       },
     },
   },
+  resolve: {
+    /**
+     * @see https://vitejs.dev/config/#resolve-extensions
+     */
+    // extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
+    alias: [
+      //{ find: 'vue', replacement: resolve('./node_modules/vue/dist/vue.esm.js') },
+      { find: '@', replacement: resolve(_dirname, 'src') },
+    ],
+  },
   plugins: [
-    createHtmlPlugin({
-      minify: false,
-      inject: {
-        data: {
-          firstSlide,
-          leftSlide,
-          rightSlide,
+    injectHtml({
+      data: {
+        //        injectSkeleton: firstSlide
+      },
+    }),
+    createVuePlugin({
+      vueTemplateOptions: {
+        compilerOptions: {
+          whitespace: 'preserve',
         },
       },
     }),
@@ -53,4 +70,6 @@ export default defineConfig({
     host: '0.0.0.0',
     port: process.env.DEV_PORT || 3000,
   },
-});
+};
+
+export default viteConfig;

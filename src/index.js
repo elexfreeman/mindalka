@@ -1,4 +1,5 @@
+async function main() {
+  console.log('main');
+}
 
-export const parser = (data) => {
-  return data;
-};
+main();
