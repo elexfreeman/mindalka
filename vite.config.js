@@ -9,7 +9,7 @@ const _dirname = dirname(fileURLToPath(import.meta.url));
 dotenv.config();
 
 const viteConfig = {
-  base: process.env.DEV_MODE == '1' ? '/' : `/galaxy-simulation/`,
+  base: process.env.DEV_MODE == '1' ? '/' : `/`,
   css: {
     preprocessorOptions: {
       scss: {
