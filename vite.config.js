@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import { injectHtml } from 'vite-plugin-html';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import inject from '@rollup/plugin-inject';
 
 import { createVuePlugin } from 'vite-plugin-vue2';
 
@@ -50,9 +51,15 @@ const viteConfig = {
     alias: [
       //{ find: 'vue', replacement: resolve('./node_modules/vue/dist/vue.esm.js') },
       { find: '@', replacement: resolve(_dirname, 'src') },
+      { find: 'vue', replacement: resolve('./node_modules/vue/dist/vue.esm.js') },
     ],
   },
   plugins: [
+    {
+      ...inject({}),
+      enforce: 'post',
+      apply: 'build',
+    },
     injectHtml({
       data: {
         //        injectSkeleton: firstSlide

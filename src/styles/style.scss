@@ -1,13 +1,14 @@
 $--font-family-site: 'Marck Script';
 
-@import "./common/mixins.scss";
-@import "./components/slide.scss";
-@import "./components/button.scss";
-@import "./components/description.scss";
-@import "./components/product.scss";
+@import './colors.scss';
+@import './fonts.scss';
+@import './common/mixins.scss';
+@import './components/slide.scss';
+@import './components/button.scss';
+@import './components/description.scss';
+@import './components/product.scss';
 
-
-@import "./firstSlide.scss";
+@import './firstSlide.scss';
 
 body {
   font-family: $--font-family-site;
@@ -20,16 +21,14 @@ body {
   margin: 0 auto;
 
   @include display-after(sm) {
-    max-width: 770px; 
+    max-width: 770px;
   }
 
   @include display-after(md) {
-    max-width: 1080px; 
+    max-width: 1080px;
   }
 
   @include display-after(lg) {
-    max-width: 1194px
+    max-width: 1194px;
   }
-
 }
-
