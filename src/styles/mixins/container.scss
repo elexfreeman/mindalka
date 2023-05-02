@@ -1,0 +1,47 @@
+$colPrefixes: ('xs', 'sm', 'md', 'lg') !default;;
+$colBreakMin: (false, 1020px, 1440px, 1660px) !default;;
+$colBreakMax: (1019px, 1439px, 1659px, false) !default;;
+$colMaxWidth: (712px, 1194px, 1350px, 1660px) !default;;
+$colPaddings: (15px, 20px, 30px, 30px) !default;
+
+@mixin containerGutter($gutter) {
+  padding-left: calc(#{$gutter} / 2);
+  padding-right: calc(#{$gutter} / 2);
+}
+
+@mixin makeContainerLoop($colPrefixes: $colPrefixes, $i: 1) {
+  @if ($i <= length($colPrefixes)) {
+    $prefixNum: $i;
+    $containerGutter: nth($colPaddings, $i);
+
+    $_min: nth($colBreakMin, $i);
+    $_max: nth($colBreakMax, $i);
+
+    @if ($prefixNum == 1) {
+      @include containerGutter($containerGutter);
+    }
+
+    @if ($prefixNum > 1) {
+      @if ($_min != false) {
+        @media only screen and (min-width: $_min) {
+          @include containerGutter($containerGutter);
+        }
+      }
+
+      @if ($_min == false and $_max == false) {
+        @include containerGutter($containerGutter);
+      }
+    }
+
+    @include makeContainerLoop($colPrefixes, $i + 1);
+  }
+}
+
+// .container() fallback mixin for styling the container to other classes
+@mixin container() {
+  @include makeContainerLoop();
+
+  & .container {
+    width: 100%;
+  }
+}

@@ -1,0 +1,43 @@
+.results-listing-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(0, 160px));
+  justify-content: space-around;
+  grid-row-gap: 24px;
+
+  @include display-after(sm) {
+    grid-template-columns: repeat(3, minmax(0, 324px));
+    grid-row-gap: 40px;
+  }
+
+  @include display-after(md) {
+    grid-template-columns: repeat(4, minmax(0, 340px));
+    grid-row-gap: 0;
+  }
+
+  @include display-after(lg) {
+    grid-template-columns: repeat(4, minmax(0, 400px));
+  }
+}
+
+.product-list-item {
+
+  &__img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+  }
+
+  &__title {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    color: #8b8b8b;
+  }
+
+  &__price {
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    color: #000000;
+  }
+}

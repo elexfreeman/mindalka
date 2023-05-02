@@ -1,0 +1,66 @@
+@mixin skeleton-loading($is-inverted: false, $is-dark: false) {
+  $color-primary: $--color-gallery;
+  $color-contrast: $--color-mercury;
+
+  @if $is-dark == true {
+    $color-primary: $--color-mercury;
+  }
+
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    @if $is-inverted == true {
+      background-color: $color-contrast;
+    } @else {
+      background-color: $color-primary;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    animation: animate-bg-blick 2s linear 0s infinite normal;
+    z-index: 1;
+
+    @if $is-inverted == true {
+      background: linear-gradient(
+        to right,
+        $color-contrast 0%,
+        $color-primary 50%,
+        $color-contrast 100%
+      );
+    } @else {
+      background: linear-gradient(
+        to right,
+        $color-primary 0%,
+        $color-contrast 50%,
+        $color-primary 100%
+      );
+    }
+  }
+
+  @keyframes animate-bg-blick {
+    0% {
+      transform: translateX(-300%);
+    }
+
+    100% {
+      transform: translateX(400%);
+    }
+  }
+}

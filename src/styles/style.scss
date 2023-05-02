@@ -3,12 +3,15 @@ $--font-family-site: 'Marck Script';
 @import './colors.scss';
 @import './fonts.scss';
 @import './common/mixins.scss';
+@import './common/container.scss';
 @import './components/slide.scss';
 @import './components/button.scss';
 @import './components/description.scss';
 @import './components/product.scss';
 
 @import './firstSlide.scss';
+
+@import './components/productList.scss';
 
 body {
   font-family: $--font-family-site;
