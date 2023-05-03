@@ -2,7 +2,7 @@ $colPrefixes: ('xs', 'sm', 'md', 'lg') !default;;
 $colBreakMin: (false, 1020px, 1440px, 1660px) !default;;
 $colBreakMax: (1019px, 1439px, 1659px, false) !default;;
 $colMaxWidth: (712px, 1194px, 1350px, 1660px) !default;;
-$colPaddings: (15px, 20px, 30px, 30px) !default;
+$colPaddings: (15px, 250px, 300px, 420px) !default;
 
 @mixin containerGutter($gutter) {
   padding-left: calc(#{$gutter} / 2);

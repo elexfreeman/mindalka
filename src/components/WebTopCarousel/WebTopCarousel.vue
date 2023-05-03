@@ -16,7 +16,7 @@
         @splide:move="onSplideMove"
         @splide:dragged="onDragged"
       >
-        <SplideSlide v-for="(item, key) of items" :key="key">
+        <SplideSlide class="web-top-carousel__slide" v-for="(item, key) of items" :key="key">
           <img class="web-top-carousel__img" :src="item" />
         </SplideSlide>
       </Splide>
@@ -183,9 +183,24 @@ export default {
 
 <style lang="scss">
 .web-top-carousel {
+  &__slide {
+    position: relative;
+    cursor: pointer;
+    height: 346px;
+
+    @include display-after(sm) {
+      height: 238px;
+    }
+
+    @include display-after(md) {
+      height: 30vw;
+    }
+  }
+
   &__img {
     width: 100%;
   }
+
   &__slider {
     &.le-slider .splide {
       &__pagination {
